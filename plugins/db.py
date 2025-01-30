@@ -1,10 +1,14 @@
 # ©️biisal jai shree krishna 😎
 from typing import Any
 from info import *
-from motor import motor_asyncio
-client: motor_asyncio.AsyncIOMotorClient[Any] = motor_asyncio.AsyncIOMotorClient(MONGO_URL)
-db = client["biisal"]
 
+from motor.motor_asyncio import AsyncIOMotorClient
+
+
+try:
+    _mongo_async_ = AsyncIOMotorClient(MONGOURL)
+    db = _mongo_async_.Anon
+    exit()
 
 class User:
     def __init__(self):
